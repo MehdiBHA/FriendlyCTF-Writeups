@@ -32,14 +32,14 @@ cipher = "cNZQNTXpEOevvG28/gXPmQIREF800F2+MmM1ntiEycw="
 '''
 ```
 
-### Attack
+## Attack
 According to the title of the challenge, we see that it's something related to [Seed Function](https://www.w3schools.com/python/ref_random_seed.asp#:~:text=The%20seed()%20method%20is,uses%20the%20current%20system%20time.).
 
 What the seed function does is initialising a pseudo-random number generator with given number to start with (seed value), which means that anyone seeds with the same value will get the same random sequence.
 
 So all we have to do is to find the correct seed value so we can generate the correct key and decrypt the cipher.
 
-### Exploit
+## Exploit
 In our given source code we see this line :
 ```python
 seed = random.randrange(0,256)
