@@ -45,6 +45,7 @@ In our given source code we see this line :
 seed = random.randrange(0,256)
 ```
 So the seed value is a random number between 0 and 256. With a little bruteforce we can find the correct one.
+
 We write our exploit :
 ```python
 from Crypto.Util.number import long_to_bytes
