@@ -1,3 +1,3 @@
 # FriendlyCTF-Writeups
 
-Some Writeups of my challenges for the FriendlyCTF, hope you enjoy them ^^
+Some writeups of my challenges for the FriendlyCTF, I hope you enjoy them ^^
