@@ -42,7 +42,8 @@ assert gcd == 1
 assert invert(pow(c2,y,n),n)
 
 m = (pow(c1,x,n) * pow(c2,y,n)) % n
-print(long_to_bytes(m).decode())
+print(long_to_bytes(m))
 ```
+
 
 FLAG is **Securinets{c0mmon_m0dulus}**
