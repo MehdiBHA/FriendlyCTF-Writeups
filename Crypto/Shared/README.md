@@ -1,5 +1,5 @@
 # Shared
-![1](https://imgur.com/TqF1f4Z)
+![1](https://imgur.com/a/Ldeywkz)
 
 Its **RSA** challenge, we were given two pairs *(n,e1)*, *(n,e2)* and two ciphers. It seems that the message encrypted two times with the same modulus but with different exponents.
 
