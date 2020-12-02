@@ -14,7 +14,7 @@ Back in our context, if we have *gcd(e₁, e₂) = 1*, then we have integers x a
 
 ![1_azXxHzA4EuE_5ZQVk6x-GQ](https://user-images.githubusercontent.com/62826765/100806192-525f8b80-3430-11eb-9500-ca5f2fa5da75.png)
 
-Now, by using **the Extended Euclidean Algorithm** we can find x and y and then the plaintext can be recovered as follows :
+Now, by using **the Extended Euclidean Algorithm** we can find x and y and then the plaintext can be recovered as follows : 
 
 ![1_AfVkYZVMT_5qzGtgr82DDA](https://user-images.githubusercontent.com/62826765/100806318-88047480-3430-11eb-92c8-3803333bac0d.png)
 
@@ -29,7 +29,6 @@ def egcd(a, b): #Extended Euclidean Algorithm
 	else:
 		g, y, x = egcd(b % a, a)
 		return (g, x - (b // a) * y, y)
-
 
 n = 56891607317613445737750783421867972775249572399868790441120633009929442237956426430872259524747190957003843589191818005172449569095010326902570697779311445080658255239480648637639774011002922525938326812054289272761548189515649720401657615661945821118048442804640057370308200873641231270154569615397630035523
 e1 = 15
