@@ -65,7 +65,7 @@ So think about it, if we flip some bits of the previous ciphertext block, the ne
 
 ![082113_1459_CBCByteFlip3](https://user-images.githubusercontent.com/62826765/100911065-09124900-34cf-11eb-8765-81f98f3e9517.jpg)
 
-And that's what called [AES-CBC Bit-Flipping Attack](https://masterpessimistaa.wordpress.com/2017/05/03/cbc-bit-flipping-attack/)
+And that's what called **_AES-CBC Bit-Flipping Attack_**
 
 ## Exploit
 
