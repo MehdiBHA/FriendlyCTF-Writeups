@@ -54,11 +54,11 @@ while True:
             print("You have to be an ADMIN to get the flag !")
             exit()
 ```
-After connecting, it gives us two options we choose **1** it gives us a token, but when we try to get the flag with it it says "_You have to be an ADMIN to get the flag !_"
+After connecting, it gives us two options. We choose **1** it gives us a token, but when we try to get the flag with it a message says "_You have to be an ADMIN to get the flag !_"
 
 ![2020-12-02 20_38_38-Kali - VMware Workstation](https://user-images.githubusercontent.com/62826765/100922613-64980300-34de-11eb-8eea-4e9b24e0faa0.png)
 
-After looking at the source code, it checks the decryption 
+After looking at the source code, we see that it checks for the existence of "_admin=1_" after the decryption, but the problem is that we have "_admin=0_" in our token ! So how we are going to make "_admin=1_" appears ?
 
 With digging on AES attacks and according to the challenge description, this leads us to **_AES-CBC Bit-Flipping Attack_**
 
