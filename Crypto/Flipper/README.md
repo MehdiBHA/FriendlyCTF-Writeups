@@ -68,12 +68,7 @@ So think about it, if we flip some bits of the previous ciphertext block, the ne
 And that's what called **_AES-CBC Bit-Flipping Attack_**
 
 ## Exploit
-First, we have to find the position of the target byte to change. By looking at these two lines we can determine our plaintext length.
-```python
-id = random.randint(2**30,2**32)
-token = "{user_id="+str(id)+";is_admin=0}"
-```
-The length of _token_ after padding is **32** (_id_ has a fixed length wich is **10**). We take an exemple for the exploit : _token_ = "{user_id=2219801953;is_admin=0}\x01"
+Honestly, it's rough to write a full explication of the attack, so i leave you this link go check it [Link](https://resources.infosecinstitute.com/topic/cbc-byte-flipping-attack-101-approach/)
 
 
 
