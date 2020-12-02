@@ -61,9 +61,9 @@ First, have a look at the [AES-CBC mode](https://en.wikipedia.org/wiki/Block_cip
 
 CBC mode had a vulnerability that in encryption (or decryption) it uses the previous block to XOR it with next block. Then since I’m in control of what’s get decrypted, then I’m in control of the previous encrypted block, which means what’s going to be XORed with the current decrypted block.
 
-So think about it, if we flip some bits of the previous ciphertext block, the next plaintext block plaintext will change according to what bits you flip. And that's what called [AES-CBC Bit-Flipping Attack](https://masterpessimistaa.wordpress.com/2017/05/03/cbc-bit-flipping-attack/)
-
+So think about it, if we flip some bits of the previous ciphertext block, the next plaintext block plaintext will change according to what bits you flip. 
 ![082113_1459_CBCByteFlip3](https://user-images.githubusercontent.com/62826765/100911065-09124900-34cf-11eb-8765-81f98f3e9517.jpg)
+And that's what called [AES-CBC Bit-Flipping Attack](https://masterpessimistaa.wordpress.com/2017/05/03/cbc-bit-flipping-attack/)
 
 ## Exploit
 
