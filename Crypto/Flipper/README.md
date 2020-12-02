@@ -54,3 +54,12 @@ while True:
             print("You have to be an ADMIN to get the flag !")
             exit()
 ```
+Our main problem in this challenge is to get a valid token which contains *admin=1* so we can login as administrator and get the flag.
+
+
+## Attack
+First, have a look at the [AES-CBC mode](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Cipher_block_chaining_(CBC))
+
+CBC mode had a vulnerability that in encryption (or decryption) it uses the previous block to XOR it with next block. Then since I’m in control of what’s get decrypted, then I’m in control of the previous encrypted block, which means what’s going to be XORed with the current decrypted block.
+
+So think about it, if we flip some bits of the previous ciphertext block, the next plaintext block plaintext will change according to what bits you flip. And that's what called [AES-CBC Bit-Flipping Attack]()
