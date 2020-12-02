@@ -1,7 +1,7 @@
 # Flipper
 ![Flipper](https://user-images.githubusercontent.com/62826765/100810414-c3a33c80-3438-11eb-89fd-dcf7e12faeb8.png)
 
-Its **AES-CBC** challenge, we were given a source code and a server netcat (I'm going to do the writeup on local) :
+Its **AES-CBC** challenge, we were given a source code and a server netcat :
 ```python
 from Crypto.Util.Padding import pad, unpad
 from Crypto.Cipher import AES
@@ -54,7 +54,13 @@ while True:
             print("You have to be an ADMIN to get the flag !")
             exit()
 ```
+After connecting, it gives us two options we choose **1** it gives us a token, but when we try to get the flag with it it says "_You have to be an ADMIN to get the flag !_"
 
+![2020-12-02 20_38_38-Kali - VMware Workstation](https://user-images.githubusercontent.com/62826765/100922613-64980300-34de-11eb-8eea-4e9b24e0faa0.png)
+
+After looking at the source code, it checks the decryption 
+
+With digging on AES attacks and according to the challenge description, this leads us to **_AES-CBC Bit-Flipping Attack_**
 
 ## Attack
 First, have a look at the [AES-CBC mode](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Cipher_block_chaining_(CBC))
@@ -65,20 +71,31 @@ So think about it, if we flip some bits of the previous ciphertext block, the ne
 
 ![082113_1459_CBCByteFlip3](https://user-images.githubusercontent.com/62826765/100911065-09124900-34cf-11eb-8765-81f98f3e9517.jpg)
 
-And that's what called **_AES-CBC Bit-Flipping Attack_**
-
 ## Exploit
 Honestly, it's rough to write a full explication of the attack :) so I leave you this with [Link](https://resources.infosecinstitute.com/topic/cbc-byte-flipping-attack-101-approach/) go check it.
 
 We take an exemple for the exploit :
 
-_token = "{user_id=2219801953;is_admin=0}\x01"_
-
-_cipher = "d8c3cf10da63d5824497e45b7293eb030c484282245efbe157d801837f064497"_
+_cipher = "351b3d18bf41d307d239cc67d02ddd06416be9a57357f9c279e25d51d28ab973"_
 
 Our exploit :
 ```python
+cipher = list(bytes.fromhex("351b3d18bf41d307d239cc67d02cdd06416be9a57357f9c279e25d51d28ab973"))
+# token = "{user_id=[10 digits];is_admin=0}\x01"
 
+block1 = cipher[0:16]
+block2 = cipher[16:32]
+
+# The target byte '0' is located at postion 13 of block2
+block1[13] = block1[13] ^ ord('0') ^ ord('1')
+
+cipher = block1 + block2
+
+new_cipher = ''.join(chr(i) for i in cipher).encode('latin-1')
+print(new_cipher.hex())
 ```
+![Sol](https://user-images.githubusercontent.com/62826765/100921682-2fd77c00-34dd-11eb-9c59-1c69a6541325.png)
+
+FLAG is **_Securinets{Rijndael_is_pr0ud}_**
 
 
