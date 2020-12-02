@@ -68,7 +68,17 @@ So think about it, if we flip some bits of the previous ciphertext block, the ne
 And that's what called **_AES-CBC Bit-Flipping Attack_**
 
 ## Exploit
-Honestly, it's rough to write a full explication of the attack, so i leave you this link go check it [Link](https://resources.infosecinstitute.com/topic/cbc-byte-flipping-attack-101-approach/)
+Honestly, it's rough to write a full explication of the attack :) so I leave you this with [Link](https://resources.infosecinstitute.com/topic/cbc-byte-flipping-attack-101-approach/) go check it.
 
+We take an exemple for the exploit :
+
+_token = "{user_id=2219801953;is_admin=0}\x01"_
+
+_cipher = "d8c3cf10da63d5824497e45b7293eb030c484282245efbe157d801837f064497"_
+
+Our exploit :
+```python
+
+```
 
 
