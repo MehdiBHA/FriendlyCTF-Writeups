@@ -3,7 +3,7 @@
 
 Its **RSA** challenge, we were given two pairs *(n,e1)*, *(n,e2)* and two ciphers. It seems that the message encrypted two times with the same modulus but with different exponents.
 
-With some researchs, this leads us to [Common Modulus Attack](https://crypto.stackexchange.com/questions/16283/how-to-use-common-modulus-attack)
+With some researchs, this leads us to **Common Modulus Attack**
 
 ## Attack
 **Bezout’s Theorem** says that if there are two integers a and b (not zero) then there are integers x and y such that :
