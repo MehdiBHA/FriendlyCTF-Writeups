@@ -79,7 +79,7 @@ So think about it, if we flip some bits of the previous ciphertext block, the ne
 ![082113_1459_CBCByteFlip3](https://user-images.githubusercontent.com/62826765/100911065-09124900-34cf-11eb-8765-81f98f3e9517.jpg)
 
 ## Exploit
-Honestly, it's rough to write a full explication of the attack :) so I leave you this with [Link](https://resources.infosecinstitute.com/topic/cbc-byte-flipping-attack-101-approach/) go check it.
+Honestly, it's rough to write a full explication of the attack :) so I leave you this [Link](https://resources.infosecinstitute.com/topic/cbc-byte-flipping-attack-101-approach/) go check it.
 
 We take an exemple for the exploit :
 
