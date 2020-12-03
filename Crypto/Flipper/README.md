@@ -54,7 +54,7 @@ while True:
             print("You have to be an ADMIN to get the flag !")
             exit()
 ```
-After connecting, it gives us two options. We choose **1** it gives us a token, but when we try to get the flag with it a message says : "_You have to be an ADMIN to get the flag !_"
+After connecting, it gives us two options. We choose ```1``` it gives us a token, but when we try to get the flag with it a message says : ```You have to be an ADMIN to get the flag !```
 
 ![2020-12-02 20_38_38-Kali - VMware Workstation](https://user-images.githubusercontent.com/62826765/100922613-64980300-34de-11eb-8eea-4e9b24e0faa0.png)
 
@@ -83,7 +83,7 @@ Honestly, it's rough to write a full explication of the attack :) so I leave you
 
 We take an exemple for the exploit :
 
-_cipher = "351b3d18bf41d307d239cc67d02ddd06416be9a57357f9c279e25d51d28ab973"_
+```cipher = "351b3d18bf41d307d239cc67d02ddd06416be9a57357f9c279e25d51d28ab973```
 
 Our exploit :
 ```python
